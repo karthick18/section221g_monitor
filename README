@@ -1,0 +1,17 @@
+This is a US VISA Section 221G case status monitor for Chennai consulate at:
+http://chennai.usconsulate.gov/221g-administrative-processing.html
+
+It tracks the current case status against the last case status. 
+It then mails the status of the changed cases. 
+An example case status mail body can be seen in the case_status file.
+
+Its expected to be run as a cronjob preferably at 5:15 PM on all weekdays as case status changes are uploaded to the Chennai US consulate website for 221G at 5 PM everyday.
+
+It needs only 1 last case status pdf file to run/kickstart.  
+For my case, this is the section_221g_cur_case_status.pdf pertaining to June 25th 2012.
+This file is renamed to the last case status before the new case status is automatically fetched everyday.
+The script then marks the case status changes before mailing the case status changes against the last one.
+
+The tracked_case_list global in parse_221g.py also dumps additional information pertaining to only specifically tracked cases that the user might be interested in.
+
+-Karthick

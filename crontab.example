@@ -1,0 +1,2 @@
+## run the section 221g case monitor every weekday at 17:15 hours
+15 17 * * 1-5 /home/karthick/section_221g/process_221g.py
