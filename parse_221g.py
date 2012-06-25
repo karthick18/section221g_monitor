@@ -51,8 +51,8 @@ def parse_221g(last_txt_file, new_txt_file):
 if len(sys.argv) < 3:
     sys.exit(127)
 
-new_txt_file = sys.argv[1].strip()
-last_txt_file = sys.argv[2].strip()
+last_txt_file = sys.argv[1].strip()
+new_txt_file = sys.argv[2].strip()
 if __name__ == '__main__':
     #print 'Parsing section 221g information with new case file [%s], last case file [%s]' %\
     #(new_txt_file, last_txt_file)
