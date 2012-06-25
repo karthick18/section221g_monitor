@@ -3,7 +3,7 @@ import os, sys
 
 tracked_case_list = ['2012156-291-1']
 
-def parse_221g(new_txt_file, last_txt_file):
+def parse_221g(last_txt_file, new_txt_file):
     last_lines = open(last_txt_file, 'r').readlines()
     last_cases = {}
     changed_cases = {}
@@ -56,4 +56,4 @@ last_txt_file = sys.argv[2].strip()
 if __name__ == '__main__':
     #print 'Parsing section 221g information with new case file [%s], last case file [%s]' %\
     #(new_txt_file, last_txt_file)
-    parse_221g(new_txt_file, last_txt_file)
+    parse_221g(last_txt_file, new_txt_file)
