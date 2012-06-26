@@ -37,7 +37,9 @@ def parse_221g(last_txt_file, new_txt_file):
                                           case_status )
 
     print 'Case status changed for [%d] cases\n' %len(changed_cases.keys())
-    for id, status in changed_cases.items():
+    items = changed_cases.items()
+    items.sort()
+    for id, status in items:
         print 'Case [%s] status changed from [%s] to [%s]' %(id, status[0], status[1])
 
     print '\n\nTracked cases status:\n'
