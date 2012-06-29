@@ -14,4 +14,10 @@ The script then marks the case status changes before mailing the case status cha
 
 The tracked_case_list global in parse_221g.py also dumps additional information pertaining to only specifically tracked cases that the user might be interested in.
 
+Finally the monitor dumps the date along with cases issued for the date into case_status_graph.dat. This is used to plot a graph using the plotter in case_status_graph.py using the matplotlib module.
+
+matplotlib for Mint/Ubuntu can be installed with python-matplotlib.
+Alternatively, it can be installed from sourceforge: http://matplotlib.sourceforge.net
+After installation, ./case_status_graph.py can be run to see the graph.
+
 -Karthick
