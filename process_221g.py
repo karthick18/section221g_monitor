@@ -19,6 +19,8 @@ url_list.append(case_url)
 section_221g_url = url_prefix + '/'.join(url_list)
 print 'url = [%s]' %section_221g_url
 
+case_datetime = time.strftime('%Y-%m-%d(%a)', ltime)
+
 os.rename(cur_case_name, last_case_name)
 os.system('wget %s -O %s' %(section_221g_url, cur_case_name))
 
@@ -37,11 +39,12 @@ print 'Processing section 221g case list pertaining to last case file [%s] and c
     last_case_txt_file, cur_case_txt_file)
 
 tracked_cases = {'2012156-291-1':('PENDING_PROCESS', 'PENDING_PROCESS')}
+case_status_map = {}
 def parse_221g(last_txt_file, new_txt_file):
+    global case_status_map
     last_lines = open(last_txt_file, 'r').readlines()
     last_cases = {}
     changed_cases = {}
-    case_status_map = {}
     case_status_body = ''
     parse_line = False
     for l in last_lines:
@@ -109,6 +112,15 @@ def parse_221g(last_txt_file, new_txt_file):
     return (case_status_subject, case_status_body)
 
 subject, body = parse_221g(last_case_txt_file, cur_case_txt_file)
+
 # dump the body to a case status file for a sample mail format
+# also dump the date and issued count to a file that can serve as an input
+# to the matplotlib plotter file
 file('case_status', 'w').write(body)
+
+num_issued = 0
+if case_status_map.has_key('issued'):
+    num_issued = len(case_status_map['issued'])
+file('case_status_graph.dat', 'a').write(case_datetime + ' ' + str(num_issued) + '\n')
+
 send_mail('c3po-z1@openclovis.com', 'karthick@openclovis.com', subject, body) 
