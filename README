@@ -18,6 +18,6 @@ Finally the monitor dumps the date along with cases issued for the date into cas
 
 matplotlib for Mint/Ubuntu can be installed with python-matplotlib.
 Alternatively, it can be installed from sourceforge: http://matplotlib.sourceforge.net
-After installation, ./case_status_graph.py can be run to see the graph.
+After installation, ./case_status_graph.py script can be run to see the graph which uses the plot information from case_status_graph.dat.
 
 -Karthick
