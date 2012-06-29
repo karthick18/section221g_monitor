@@ -27,7 +27,7 @@ os.system('wget %s -O %s' %(section_221g_url, cur_case_name))
 if os.stat(cur_case_name).st_size == 0:
     os.rename(last_case_name, cur_case_name)
     print 'Unable to fetch case data from [%s]' %section_221g_url
-    sys.exit(0)
+    sys.exit(127)
 
 
 last_case_txt_file = last_case_name.split('.')[0] + '.txt'
