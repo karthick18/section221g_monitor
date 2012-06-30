@@ -15,7 +15,11 @@ import matplotlib.cbook as cbook
 from matplotlib.ticker import Formatter
 from matplotlib import pyplot
 from datetime import datetime
-import sys
+import sys, os
+
+if len(sys.argv) > 1:
+    os.putenv('DISPLAY', ':0.0')
+
 datafile = open('./case_status_graph.dat', 'r').readlines()[-10:]
 date_list = [ d.split()[0] for d in datafile ]
 issued_list = [ i.split()[1] for i in datafile ]
