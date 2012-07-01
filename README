@@ -16,8 +16,12 @@ The tracked_case_list global in parse_221g.py also dumps additional information 
 
 Finally the monitor dumps the date along with cases issued for the date into case_status_graph.dat. This is used to plot a graph using the plotter in case_status_graph.py using the matplotlib module.
 
-matplotlib for Mint/Ubuntu can be installed with python-matplotlib.
+The date vs CasesIssued graph can be viewed by checking out the case_status_graph.pdf file thats generated/updated automatically through the cronjob every weekday from the case_status_graph.dat input file used for plotting.
+
+In case you want to plot it manually, you have to install matplotlib python module.
+matplotlib for Mint/Ubuntu can be installed with:
+apt-get install python-matplotlib
+
 Alternatively, it can be installed from sourceforge: http://matplotlib.sourceforge.net
-After installation, ./case_status_graph.py script can be run to see the graph which uses the plot information from case_status_graph.dat.
 
 -Karthick
